@@ -1,7 +1,17 @@
+"use client";
+
 import { Container } from "../components/container";
 import { ThreeThings } from "../components/Navbar-three-things";
 import { Button } from "../components/button";
+import { Drawer } from "../components/drawer";
+import { useState } from "react";
+
 export const Navbar = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
   return (
     <Container>
       <div className="w-full h-[70px] px-6 py-3 flex flex-row items-center border-2 border-blue-800 lg:w-full lg:h-fit lg:px-20 lg:py-3 lg:flex lg:flex-row lg:items-center lg:border-2 lg:border-blue-800">
@@ -40,9 +50,14 @@ export const Navbar = () => {
           </div>
         </div>
         <div className="flex flex-1 justify-end items-center gap-7 lg:hidden">
-          <img src="/pictures/Icon.Button.png" className="w-6 h-6"></img>
+          <img
+            src="/pictures/Icon.Button.png "
+            className="w-6 h-6"
+            onClick={handleDrawer}
+          ></img>
         </div>
       </div>
+      <Drawer isOpen={isDrawerOpen} closeDrawer={handleDrawer} />
     </Container>
   );
 };
