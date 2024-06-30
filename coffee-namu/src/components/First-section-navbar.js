@@ -1,6 +1,6 @@
 "use client";
 
-import { Container } from "../components/container";
+
 import { ThreeThings } from "../components/Navbar-three-things";
 import { Button } from "../components/button";
 import { Drawer } from "../components/drawer";
@@ -13,8 +13,8 @@ export const Navbar = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
   return (
-    <Container>
-      <div className="w-full h-[70px] px-6 py-3 flex flex-row items-center border-2 border-blue-800 lg:w-full lg:h-fit lg:px-20 lg:py-3 lg:flex lg:flex-row lg:items-center lg:border-2 lg:border-blue-800">
+    
+      <div className="w-full h-[70px] px-6 py-3 flex flex-row items-center border-2 border-blue-800 lg:w-full lg:h-fit lg:px-20 lg:py-3 lg:flex lg:flex-row lg:items-center lg:border-2  lg:shadow- ">
         <div className="w-full h-full flex flex-1 flex-row ">
           <img
             src="/pictures/image 20.png"
@@ -41,11 +41,13 @@ export const Navbar = () => {
               title="Нэвтрэх"
               color="text-[#AA714A]"
               background="bg-white"
+              TextSize="text-xs"
             />
             <Button
               title="Бүртгүүлэх"
               color="text-[#FFFFFF]"
               background="bg-[#AA714A]"
+              TextSize="text-xs"
             />
           </div>
         </div>
@@ -56,8 +58,9 @@ export const Navbar = () => {
             onClick={handleDrawer}
           ></img>
         </div>
+        <Drawer isOpen={isDrawerOpen} closeDrawer={handleDrawer} />
       </div>
-      <Drawer isOpen={isDrawerOpen} closeDrawer={handleDrawer} />
-    </Container>
+      
+    
   );
 };

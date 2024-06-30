@@ -1,10 +1,12 @@
 import { Navbar } from "../components/First-section-navbar";
-import { Drawer } from "../components/drawer";
+import { SecondSectionOrder } from "../components/second-section-order";
+import { Container } from "../components/container";
 
 export default function Home() {
   return (
-    <div>
+    <Container>
       <Navbar />
-    </div>
+      <SecondSectionOrder/>
+    </Container>
   );
 }
